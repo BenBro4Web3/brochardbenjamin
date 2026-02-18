@@ -62,6 +62,7 @@ export const publicProjects: ProjectItem[] = [
       'Menu digital traduit (12 langues) + diffusion multi-canaux (QR, Google, réseaux, etc.).',
     url: 'https://restranslate.com/',
     tags: ['SaaS', 'Multi-langues', 'QR Code', 'Google'],
+    image: 'https://mlymimbzwgjq.i.optimole.com/w:auto/h:auto/q:mauto/f:best/https://restranslate.com/Restranslate_Logo_V2Black.png',
     isPublic: true,
   },
   {
@@ -72,6 +73,7 @@ export const publicProjects: ProjectItem[] = [
       'Présence web + acquisition locale / prise de contact (service nettoyage automobile).',
     url: 'https://breizh-car-clean.fr/',
     tags: ['Site vitrine', 'SEO local', 'Acquisition'],
+    image: 'https://breizh-car-clean.fr/logo.jpg',
     isPublic: true,
   },
   {

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Mail, Linkedin, ArrowDown, Lock, BarChart3 } from 'lucide-react';
+import { ExternalLink, Mail, Linkedin, ArrowDown, Lock, BarChart3, Globe } from 'lucide-react';
 import {
   profile,
   skills,
@@ -196,36 +196,54 @@ export default function Home() {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-all"
+                className="group bg-card rounded-xl border border-border hover:border-primary/50 transition-all overflow-hidden"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i + 2}
                 variants={fadeUp}
               >
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <h4 className="text-lg font-semibold group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      {project.subtitle}
-                    </p>
-                  </div>
-                  <ExternalLink className="size-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-1" />
+                {/* Thumbnail */}
+                <div className="h-40 bg-secondary/50 flex items-center justify-center overflow-hidden relative">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                      <Globe className="size-10 text-primary/40" />
+                    </div>
+                  )}
                 </div>
-                <p className="text-sm text-muted-foreground font-light mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-1 text-xs rounded-md bg-secondary text-secondary-foreground"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+
+                {/* Content */}
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <h4 className="text-lg font-semibold group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        {project.subtitle}
+                      </p>
+                    </div>
+                    <ExternalLink className="size-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-1" />
+                  </div>
+                  <p className="text-sm text-muted-foreground font-light mb-4">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 text-xs rounded-md bg-secondary text-secondary-foreground"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </motion.a>
             ))}
