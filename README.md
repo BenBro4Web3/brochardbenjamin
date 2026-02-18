@@ -1,77 +1,45 @@
-# Welcome to your Lovable project
+# Portfolio — Gestion de projet & automatisation (Google Sheets / Apps Script)
 
-## Project info
+Je suis **technico-commercial** avec une forte composante **gestion de projet / delivery**, spécialisé dans :
+- la **digitalisation de process** (data / ops / facturation)
+- l’**automatisation** (Google Sheets / Apps Script)
+- l’outillage interne et le reporting (Looker Studio)
 
-**URL**: https://lovable.dev/projects/6fd12b81-631e-49d3-83b3-86e8b3fab3ae
+🎯 Objectif : **CDI** ou **missions freelance** (pilotage, cadrage, déploiement, automatisations, reporting).
 
-## How can I edit this code?
+## Ce que j’apporte
+- Cadrage & pilotage : recueil besoin, chiffrage, planning, coordination, recette, mise en prod
+- Automatisation & data : flux semi-automatiques, OCR, génération de documents, intégrations compta
+- Reporting : suivi d’usage, métriques produit, dashboards (Looker Studio)
 
-There are several ways of editing your application.
+## Projets publics (démo)
+- **ResTranslate — Menu digital traduit (B2B CHR)**  
+  https://restranslate.com/  
+  Menu digital traduit (12 langues) + diffusion multi-canaux (QR, Google, réseaux, etc.). :contentReference[oaicite:0]{index=0}  
+  👉 Case study : `case-studies/restranslate.md`
 
-**Use Lovable**
+- **Breizh Car Clean — Service local (auto à domicile)**  
+  https://breizh-car-clean.fr/  
+  Présence web + acquisition locale / prise de contact (service nettoyage automobile). :contentReference[oaicite:1]{index=1}  
+  👉 Case study : `case-studies/breizh-car-clean.md`
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6fd12b81-631e-49d3-83b3-86e8b3fab3ae) and start prompting.
+- **Génération Auto Passion — Véhicules d’exception (achat / vente / import)**  
+  https://generationautopassion.fr/  
+  Présentation offre + parcours de contact / estimation de reprise. :contentReference[oaicite:2]{index=2}  
+  👉 Case study : `case-studies/generation-auto-passion.md`
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Privatememe — projet en accès restreint (démo via captures)**  
+  https://privatememe.com/  
+  👉 Case study : `case-studies/privatememe.md`
 
-**Use your preferred IDE**
+## Projets non visibles (confidentiel / interne)
+Certaines réalisations ne sont pas publiables (données, clients, propriété), mais je documente :
+- OCR semi-automatique pour adapter des menus/cartes clients (ResTranslate)
+- Génération de quittances de loyers + factures semi-automatiques reliées à **Pennylane**
+- Convertisseur de calques pour **QGIS** (visualisation réseaux sur une vue unique)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+👉 Détails : `case-studies/internal-tools.md`
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/6fd12b81-631e-49d3-83b3-86e8b3fab3ae) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
-
-# ./tailwind-plus folder:
-
-The tailwind-plus folder contains tailwind components and themes to be used as inspiration for the project. DO NOT REMOVE THE FOLDER UNLESS SPECIFICALLY TOLD TO DO SO
+## Métriques / Reporting
+- **Statistiques de consultation des menus ResTranslate (Looker Studio)**  
+  https://lookerstudio.google.com/reporting/a55e5f53-ebc9-462d-bccc-0afcbc853588
