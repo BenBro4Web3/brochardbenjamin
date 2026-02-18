@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Mail, Linkedin, ArrowDown, Lock, BarChart3, Globe } from 'lucide-react';
+import { ExternalLink, Mail, Linkedin, ArrowDown, Lock, ChevronRight } from 'lucide-react';
 import {
   profile,
-  skills,
-  services,
+  stats,
+  experiences,
+  skillCategories,
   publicProjects,
   internalProjects,
-  metrics,
 } from '@/data/profile';
 import { SEOHead } from '@/components/seo/SEOHead';
 
@@ -23,114 +23,124 @@ export default function Home() {
   return (
     <>
       <SEOHead
-        title="Benjamin Brochard — Gestion de projet & Automatisation"
+        title="Benjamin Brochard — Directeur de Projets IoT & Digital"
         description={profile.description}
       />
 
       {/* ===== HERO ===== */}
       <section
         id="home"
-        className="min-h-screen flex flex-col items-center justify-center px-6 text-center relative"
+        className="min-h-screen flex flex-col items-center justify-center px-6 text-center relative overflow-hidden"
       >
-        {/* Avatar placeholder */}
-        <motion.div
-          className="w-28 h-28 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center text-4xl mb-8"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5, type: 'spring' }}
-        >
-          BB
-        </motion.div>
+        {/* Background glow */}
+        <div className="absolute inset-0 hero-glow" />
 
-        <motion.h1
-          className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight max-w-4xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {profile.title}{' '}
-          <span className="text-primary">{profile.titleHighlight}</span>
-        </motion.h1>
-
-        <motion.p
-          className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl font-light"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          {profile.description}
-        </motion.p>
-
-        <motion.div
-          className="mt-8 flex flex-wrap gap-4 justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <a
-            href="#contact"
-            className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
+        <div className="relative z-10">
+          <motion.p
+            className="text-sm text-primary font-mono tracking-widest uppercase mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            Me contacter
-          </a>
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-colors"
-          >
-            Voir LinkedIn
-          </a>
-        </motion.div>
+            {profile.name}
+          </motion.p>
 
-        {/* Skills bar */}
-        <motion.div
-          className="mt-16 space-y-3"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-        >
-          <p className="text-sm text-muted-foreground tracking-widest uppercase">
-            Outils & compétences
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            {skills.map((skill) => (
-              <div
-                key={skill.name}
-                className="flex items-center gap-2 px-4 py-2 bg-secondary rounded-lg text-sm"
-              >
-                <span>{skill.icon}</span>
-                <span>{skill.name}</span>
+          <motion.h1
+            className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] max-w-5xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
+            {profile.title}{' '}
+            <span className="gradient-text">{profile.titleHighlight}</span>
+          </motion.h1>
+
+          <motion.p
+            className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            {profile.subtitle}
+          </motion.p>
+
+          <motion.p
+            className="mt-4 text-sm md:text-base text-muted-foreground/70 max-w-xl mx-auto font-light"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            {profile.description}
+          </motion.p>
+
+          {/* CTA */}
+          <motion.div
+            className="mt-10 flex flex-wrap gap-4 justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <a
+              href="#contact"
+              className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
+            >
+              Me contacter
+            </a>
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-colors"
+            >
+              LinkedIn
+            </a>
+          </motion.div>
+
+          {/* Stats */}
+          <motion.div
+            className="mt-16 flex flex-wrap gap-8 md:gap-12 justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+          >
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="text-2xl md:text-3xl font-bold text-primary">
+                  {stat.value}
+                </p>
+                <p className="text-xs text-muted-foreground mt-1 max-w-[100px]">
+                  {stat.label}
+                </p>
               </div>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         {/* Scroll indicator */}
         <motion.div
           className="absolute bottom-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
+          transition={{ delay: 1 }}
         >
-          <a href="#services" aria-label="Scroll down">
+          <a href="#parcours" aria-label="Scroll down">
             <ArrowDown className="size-5 text-muted-foreground animate-bounce" />
           </a>
         </motion.div>
       </section>
 
-      {/* ===== SERVICES ===== */}
-      <section id="services" className="py-24 px-6 border-t border-border">
-        <div className="max-w-5xl mx-auto">
+      {/* ===== PARCOURS ===== */}
+      <section id="parcours" className="py-24 px-6 border-t border-border">
+        <div className="max-w-4xl mx-auto">
           <motion.h2
-            className="text-sm tracking-widest uppercase text-primary text-center mb-2"
+            className="text-sm tracking-widest uppercase text-primary text-center mb-2 font-mono"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={0}
             variants={fadeUp}
           >
-            Ce que j'apporte
+            Parcours
           </motion.h2>
           <motion.h3
             className="text-3xl md:text-4xl font-bold text-center mb-16"
@@ -140,43 +150,66 @@ export default function Home() {
             custom={1}
             variants={fadeUp}
           >
-            Mes compétences
+            Expériences clés
           </motion.h3>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {services.map((service, i) => (
+          <div className="relative space-y-8">
+            {/* Vertical line */}
+            <div className="absolute left-[7px] top-3 bottom-3 w-px bg-border" />
+
+            {experiences.map((exp, i) => (
               <motion.div
-                key={service.title}
-                className="p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-colors"
+                key={exp.company}
+                className="relative pl-10"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i + 2}
                 variants={fadeUp}
               >
-                <div className="text-3xl mb-4">{service.icon}</div>
-                <h4 className="text-lg font-semibold mb-2">{service.title}</h4>
-                <p className="text-muted-foreground text-sm font-light">
-                  {service.description}
-                </p>
+                {/* Dot */}
+                <div className="absolute left-0 top-3 w-[15px] h-[15px] rounded-full bg-primary/20 border-2 border-primary" />
+
+                {/* Card */}
+                <div className="p-6 bg-card rounded-xl border border-border hover:border-primary/30 transition-colors">
+                  <span className="text-xs text-primary font-mono bg-primary/10 px-2.5 py-1 rounded">
+                    {exp.period}
+                  </span>
+                  <h4 className="text-lg font-semibold mt-3">{exp.company}</h4>
+                  <p className="text-sm text-primary/80">{exp.role}</p>
+                  <p className="text-sm text-muted-foreground font-light mt-3">
+                    {exp.description}
+                  </p>
+                  <ul className="mt-3 space-y-1.5">
+                    {exp.highlights.map((h) => (
+                      <li
+                        key={h}
+                        className="text-sm text-muted-foreground flex items-start gap-2"
+                      >
+                        <ChevronRight className="size-3 text-primary shrink-0 mt-1" />
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== PROJECTS ===== */}
-      <section id="projects" className="py-24 px-6 border-t border-border">
+      {/* ===== COMPETENCES ===== */}
+      <section id="competences" className="py-24 px-6 border-t border-border">
         <div className="max-w-5xl mx-auto">
           <motion.h2
-            className="text-sm tracking-widest uppercase text-primary text-center mb-2"
+            className="text-sm tracking-widest uppercase text-primary text-center mb-2 font-mono"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={0}
             variants={fadeUp}
           >
-            Projets
+            Expertise
           </motion.h2>
           <motion.h3
             className="text-3xl md:text-4xl font-bold text-center mb-16"
@@ -186,7 +219,62 @@ export default function Home() {
             custom={1}
             variants={fadeUp}
           >
-            Réalisations publiques
+            Compétences & outils
+          </motion.h3>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skillCategories.map((cat, i) => (
+              <motion.div
+                key={cat.category}
+                className="p-6 bg-card rounded-xl border border-border hover:border-primary/30 transition-colors"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={i + 2}
+                variants={fadeUp}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-2xl">{cat.icon}</span>
+                  <h4 className="font-semibold">{cat.category}</h4>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {cat.items.map((item) => (
+                    <span
+                      key={item}
+                      className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PROJETS ===== */}
+      <section id="projets" className="py-24 px-6 border-t border-border">
+        <div className="max-w-5xl mx-auto">
+          <motion.h2
+            className="text-sm tracking-widest uppercase text-primary text-center mb-2 font-mono"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={0}
+            variants={fadeUp}
+          >
+            Réalisations
+          </motion.h2>
+          <motion.h3
+            className="text-3xl md:text-4xl font-bold text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={1}
+            variants={fadeUp}
+          >
+            Projets publics
           </motion.h3>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -196,45 +284,48 @@ export default function Home() {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-card rounded-xl border border-border hover:border-primary/50 transition-all overflow-hidden"
+                className="group bg-card rounded-xl border border-border hover:border-primary/30 transition-all overflow-hidden"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i + 2}
                 variants={fadeUp}
               >
-                {/* Thumbnail */}
-                <div className="h-40 bg-secondary/50 flex items-center justify-center overflow-hidden relative">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-300"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                      <Globe className="size-10 text-primary/40" />
-                    </div>
-                  )}
+                {/* Gradient header */}
+                <div
+                  className="h-36 relative overflow-hidden"
+                  style={{ background: project.gradient }}
+                >
+                  {/* Abstract decoration */}
+                  <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-white/10" />
+                  <div className="absolute -left-4 -bottom-4 w-24 h-24 rounded-full bg-white/5" />
+                  <div className="absolute right-6 top-6 w-16 h-16 rounded-lg bg-white/5 rotate-12" />
+
+                  {/* Domain */}
+                  <div className="absolute bottom-4 left-6">
+                    <p className="text-white/90 text-sm font-mono">
+                      {project.url?.replace('https://', '').replace(/\/$/, '')}
+                    </p>
+                  </div>
+
+                  {/* Hover arrow */}
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ExternalLink className="size-4 text-white/80" />
+                  </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <div>
-                      <h4 className="text-lg font-semibold group-hover:text-primary transition-colors">
-                        {project.title}
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        {project.subtitle}
-                      </p>
-                    </div>
-                    <ExternalLink className="size-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-1" />
-                  </div>
-                  <p className="text-sm text-muted-foreground font-light mb-4">
+                  <h4 className="text-lg font-semibold group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {project.subtitle}
+                  </p>
+                  <p className="text-sm text-muted-foreground font-light mt-3">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mt-4">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
@@ -251,14 +342,14 @@ export default function Home() {
 
           {/* Internal Projects */}
           <motion.h3
-            className="text-2xl md:text-3xl font-bold text-center mt-20 mb-4"
+            className="text-2xl md:text-3xl font-bold text-center mt-24 mb-4"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={0}
             variants={fadeUp}
           >
-            Projets internes / confidentiels
+            Projets internes
           </motion.h3>
           <motion.p
             className="text-center text-muted-foreground text-sm mb-12 max-w-lg mx-auto"
@@ -268,37 +359,44 @@ export default function Home() {
             custom={1}
             variants={fadeUp}
           >
-            Certaines réalisations ne sont pas publiables (données, clients,
-            propriété), mais je les documente.
+            Outils et automatisations développés en interne. Non publiables
+            (données clients, propriété intellectuelle).
           </motion.p>
 
           <div className="grid md:grid-cols-3 gap-6">
             {internalProjects.map((project, i) => (
               <motion.div
                 key={project.id}
-                className="p-6 bg-card rounded-xl border border-border"
+                className="bg-card rounded-xl border border-border overflow-hidden"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 custom={i + 2}
                 variants={fadeUp}
               >
-                <div className="flex items-center gap-2 mb-3">
-                  <Lock className="size-4 text-muted-foreground" />
-                  <h4 className="text-base font-semibold">{project.title}</h4>
-                </div>
-                <p className="text-sm text-muted-foreground font-light mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-1 text-xs rounded-md bg-secondary text-secondary-foreground"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                {/* Mini gradient accent */}
+                <div
+                  className="h-1.5"
+                  style={{ background: project.gradient }}
+                />
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Lock className="size-3.5 text-muted-foreground" />
+                    <h4 className="text-base font-semibold">{project.title}</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground font-light mb-4">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 text-xs rounded-md bg-secondary text-secondary-foreground"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -306,63 +404,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== METRICS ===== */}
-      <section className="py-24 px-6 border-t border-border">
-        <div className="max-w-5xl mx-auto">
-          <motion.h2
-            className="text-sm tracking-widest uppercase text-primary text-center mb-2"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0}
-            variants={fadeUp}
-          >
-            Métriques
-          </motion.h2>
-          <motion.h3
-            className="text-3xl md:text-4xl font-bold text-center mb-12"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={1}
-            variants={fadeUp}
-          >
-            Reporting & dashboards
-          </motion.h3>
-
-          {metrics.map((metric, i) => (
-            <motion.a
-              key={metric.title}
-              href={metric.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-4 p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-all max-w-xl mx-auto"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={i + 2}
-              variants={fadeUp}
-            >
-              <BarChart3 className="size-8 text-primary shrink-0" />
-              <div>
-                <h4 className="font-semibold group-hover:text-primary transition-colors">
-                  {metric.title}
-                </h4>
-                <p className="text-sm text-muted-foreground font-light">
-                  {metric.description}
-                </p>
-              </div>
-              <ExternalLink className="size-4 text-muted-foreground shrink-0 ml-auto" />
-            </motion.a>
-          ))}
-        </div>
-      </section>
-
       {/* ===== CONTACT ===== */}
       <section id="contact" className="py-24 px-6 border-t border-border">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h2
-            className="text-sm tracking-widest uppercase text-primary mb-2"
+            className="text-sm tracking-widest uppercase text-primary mb-2 font-mono"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -382,7 +428,7 @@ export default function Home() {
             Travaillons ensemble
           </motion.h3>
           <motion.p
-            className="text-muted-foreground font-light mb-4"
+            className="text-muted-foreground font-light mb-2 max-w-lg mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -392,7 +438,7 @@ export default function Home() {
             {profile.objective}
           </motion.p>
           <motion.p
-            className="text-muted-foreground text-sm mb-8"
+            className="text-muted-foreground text-sm mb-10"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}

@@ -6,8 +6,9 @@ import { useScrollPosition } from '@/hooks/useScrollPosition';
 
 const navLinks = [
   { name: 'Accueil', href: '#home' },
-  { name: 'Projets', href: '#projects' },
-  { name: 'Services', href: '#services' },
+  { name: 'Parcours', href: '#parcours' },
+  { name: 'Compétences', href: '#competences' },
+  { name: 'Projets', href: '#projets' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -33,7 +34,6 @@ export function Header() {
             B<span className="text-primary">.</span>B
           </a>
 
-          {/* Desktop */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
@@ -46,7 +46,6 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Mobile toggle */}
           <button
             className="md:hidden p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -57,7 +56,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.nav
