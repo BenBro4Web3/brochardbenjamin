@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { ExternalLink, Mail, Linkedin, ArrowDown, Lock, ChevronRight } from 'lucide-react';
 import {
   profile,
@@ -19,7 +20,17 @@ const fadeUp = {
   }),
 };
 
+const rotatingWords = ['imaginer', 'apprendre', 'concevoir', 'vendre', 'déployer'];
+
 export default function Home() {
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % rotatingWords.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <>
       <SEOHead
@@ -51,8 +62,21 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            {profile.title}{' '}
-            <span className="gradient-text">{profile.titleHighlight}</span>
+            J'aime{' '}
+            <span className="gradient-text inline-block min-w-[280px] md:min-w-[400px] text-left">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={rotatingWords[wordIndex]}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4 }}
+                  className="inline-block"
+                >
+                  {rotatingWords[wordIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
           </motion.h1>
 
           <motion.p
