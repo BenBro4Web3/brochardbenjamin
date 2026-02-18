@@ -31,7 +31,7 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     company: 'Heyliot',
-    role: 'Directeur de Projets IoT',
+    role: 'Chef de Projets IoT - Freelance',
     period: '2021 — 2024',
     description:
       'Pilotage end-to-end de déploiements IoT multi-clients (collectivités, industrie, tertiaire).',
