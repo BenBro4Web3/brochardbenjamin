@@ -3,7 +3,30 @@
     "allow": [
       "WebFetch(domain:www.figma.com)",
       "WebSearch",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "WebFetch(domain:www.freecodecamp.org)",
+      "Bash(gh api:*)",
+      "Bash(python -m base64:*)",
+      "mcp__plugin_figma_figma__get_design_context",
+      "mcp__plugin_figma_figma__get_screenshot",
+      "Bash(npx tsc:*)",
+      "Bash(npx vite build)",
+      "Bash(curl:*)",
+      "Bash(npm install:*)",
+      "Bash(where:*)",
+      "Bash(/c/Windows/System32/curl.exe:*)",
+      "Bash(node:*)",
+      "Bash(dir:*)",
+      "Bash(bun install:*)",
+      "Bash(bun run build)",
+      "Bash(npx vite build:*)",
+      "Bash(timeout 5 bun run dev:*)",
+      "Skill(commit)",
+      "Bash(git pull:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git stash:*)",
+      "Bash(git push:*)"
     ]
   }
 }
