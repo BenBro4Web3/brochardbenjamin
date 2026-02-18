@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <>
       <SEOHead
-        title="Benjamin Brochard — Directeur de Projets IoT & Digital"
+        title="Benjamin Brochard — Gestion de projet & Automatisation"
         description={profile.description}
       />
 
@@ -291,26 +291,23 @@ export default function Home() {
                 custom={i + 2}
                 variants={fadeUp}
               >
-                {/* Gradient header */}
-                <div
-                  className="h-36 relative overflow-hidden"
-                  style={{ background: project.gradient }}
-                >
-                  {/* Abstract decoration */}
-                  <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-white/10" />
-                  <div className="absolute -left-4 -bottom-4 w-24 h-24 rounded-full bg-white/5" />
-                  <div className="absolute right-6 top-6 w-16 h-16 rounded-lg bg-white/5 rotate-12" />
-
-                  {/* Domain */}
-                  <div className="absolute bottom-4 left-6">
-                    <p className="text-white/90 text-sm font-mono">
-                      {project.url?.replace('https://', '').replace(/\/$/, '')}
-                    </p>
-                  </div>
-
-                  {/* Hover arrow */}
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <ExternalLink className="size-4 text-white/80" />
+                {/* Screenshot */}
+                <div className="aspect-[16/9] relative overflow-hidden">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div
+                      className="w-full h-full"
+                      style={{ background: project.gradient }}
+                    />
+                  )}
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                    <ExternalLink className="size-5 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
 

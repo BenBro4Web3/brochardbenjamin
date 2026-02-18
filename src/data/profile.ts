@@ -1,10 +1,10 @@
 export const profile = {
   name: 'Benjamin Brochard',
-  title: 'Directeur de Projets',
-  titleHighlight: 'IoT & Digital',
-  subtitle: 'Business Engineer · Chef de Projet · Fondateur SaaS',
+  title: 'Curieux, ouvert &',
+  titleHighlight: 'touche-à-tout',
+  subtitle: 'Gestion de projet · Automatisation · Création de produits',
   description:
-    "Pilotage de projets IoT complexes, développement commercial B2B et création d'outils internes. De la prospection à la mise en production.",
+    "J'aime comprendre, construire et connecter les choses. IoT, SaaS, automatisation, reporting — ce qui m'anime, c'est de résoudre des problèmes concrets.",
   objective:
     'Ouvert aux opportunités CDI ou missions freelance en pilotage de projets, delivery, automatisation et reporting.',
   email: 'benjamin.brochard@gmail.com',
@@ -128,6 +128,7 @@ export interface ProjectItem {
   url?: string;
   tags: string[];
   gradient: string;
+  image?: string;
   isPublic: boolean;
 }
 
@@ -141,6 +142,7 @@ export const publicProjects: ProjectItem[] = [
     url: 'https://restranslate.com/',
     tags: ['SaaS', 'Multi-langues', 'QR Code', 'Looker Studio'],
     gradient: 'linear-gradient(135deg, #3b82f6, #06b6d4)',
+    image: '/images/projects/restranslate.png',
     isPublic: true,
   },
   {
@@ -152,6 +154,7 @@ export const publicProjects: ProjectItem[] = [
     url: 'https://breizh-car-clean.fr/',
     tags: ['Site vitrine', 'SEO local', 'Acquisition'],
     gradient: 'linear-gradient(135deg, #10b981, #22c55e)',
+    image: '/images/projects/breizh-car-clean.png',
     isPublic: true,
   },
   {
@@ -163,6 +166,7 @@ export const publicProjects: ProjectItem[] = [
     url: 'https://generationautopassion.fr/',
     tags: ['Site vitrine', 'Lead gen', 'Automobile'],
     gradient: 'linear-gradient(135deg, #f59e0b, #f97316)',
+    image: '/images/projects/generation-auto-passion.png',
     isPublic: true,
   },
   {
@@ -174,6 +178,7 @@ export const publicProjects: ProjectItem[] = [
     url: 'https://privatememe.com/',
     tags: ['App web', 'React', 'Communauté'],
     gradient: 'linear-gradient(135deg, #a855f7, #ec4899)',
+    image: '/images/projects/privatememe.png',
     isPublic: true,
   },
 ];
