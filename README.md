@@ -15,17 +15,17 @@ Je suis **technico-commercial** avec une forte composante **gestion de projet / 
 ## Projets publics (démo)
 - **ResTranslate — Menu digital traduit (B2B CHR)**  
   https://restranslate.com/  
-  Menu digital traduit (12 langues) + diffusion multi-canaux (QR, Google, réseaux, etc.). :contentReference[oaicite:0]{index=0}  
+  Menu digital traduit (12 langues) + diffusion multi-canaux (QR, Google, réseaux, etc.).
   👉 Case study : `case-studies/restranslate.md`
 
 - **Breizh Car Clean — Service local (auto à domicile)**  
   https://breizh-car-clean.fr/  
-  Présence web + acquisition locale / prise de contact (service nettoyage automobile). :contentReference[oaicite:1]{index=1}  
+  Présence web + acquisition locale / prise de contact (service nettoyage automobile).
   👉 Case study : `case-studies/breizh-car-clean.md`
 
 - **Génération Auto Passion — Véhicules d’exception (achat / vente / import)**  
   https://generationautopassion.fr/  
-  Présentation offre + parcours de contact / estimation de reprise. :contentReference[oaicite:2]{index=2}  
+  Présentation offre + parcours de contact / estimation de reprise. :  
   👉 Case study : `case-studies/generation-auto-passion.md`
 
 - **Privatememe — projet en accès restreint (démo via captures)**  
