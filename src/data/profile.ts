@@ -31,7 +31,7 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     company: 'Heyliot',
-    role: 'Chef de Projets IoT - Freelance',
+    role: 'Chef de projet IoT (indépendant)',
     period: '2021 — 2024',
     description:
       'Pilotage end-to-end de déploiements IoT multi-clients (collectivités, industrie, tertiaire).',
@@ -44,7 +44,7 @@ export const experiences: Experience[] = [
   },
   {
     company: 'Sensing Vision',
-    role: 'Business Engineer IoT',
+    role: 'Business Engineer IoT (CDI)',
     period: '2019 — 2021',
     description:
       'Développement commercial et technique sur le marché IoT B2B.',
@@ -58,7 +58,7 @@ export const experiences: Experience[] = [
   {
     company: 'ResTranslate',
     role: 'Fondateur',
-    period: '2020 — présent',
+    period: 'Depuis 2020',
     description:
       "Création et développement d'un SaaS B2B de menus digitaux multilingues pour la restauration.",
     highlights: [
