@@ -26,7 +26,13 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git stash:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "WebFetch(domain:restranslate.com)",
+      "WebFetch(domain:breizh-car-clean.fr)",
+      "WebFetch(domain:generationautopassion.fr)",
+      "WebFetch(domain:privatememe.com)",
+      "Bash(gh repo view:*)",
+      "WebFetch(domain:benbro4web3.github.io)"
     ]
   }
 }
