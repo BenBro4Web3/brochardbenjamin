@@ -29,10 +29,11 @@
       "Bash(git push:*)",
       "WebFetch(domain:restranslate.com)",
       "WebFetch(domain:breizh-car-clean.fr)",
-      "WebFetch(domain:generationautopassion.fr)",
+      "WebFetch(domain:generationautopassion.com)",
       "WebFetch(domain:privatememe.com)",
       "Bash(gh repo view:*)",
-      "WebFetch(domain:benbro4web3.github.io)"
+      "WebFetch(domain:benbro4web3.github.io)",
+      "Bash(bun remove:*)"
     ]
   }
 }

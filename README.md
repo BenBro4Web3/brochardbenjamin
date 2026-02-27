@@ -24,7 +24,7 @@ Je suis **technico-commercial** avec une forte composante **gestion de projet / 
   👉 Case study : `case-studies/breizh-car-clean.md`
 
 - **Génération Auto Passion — Véhicules d’exception (achat / vente / import)**  
-  https://generationautopassion.fr/  
+  https://generationautopassion.com/  
   Présentation offre + parcours de contact / estimation de reprise. :  
   👉 Case study : `case-studies/generation-auto-passion.md`
 

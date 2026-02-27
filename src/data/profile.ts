@@ -163,7 +163,7 @@ export const publicProjects: ProjectItem[] = [
     subtitle: "Véhicules d'exception — Achat, vente, import",
     description:
       "Vitrine premium + parcours de contact et estimation de reprise pour un négociant automobile haut de gamme.",
-    url: 'https://generationautopassion.fr/',
+    url: 'https://generationautopassion.com/',
     tags: ['Site vitrine', 'Lead gen', 'Automobile'],
     gradient: 'linear-gradient(135deg, #f59e0b, #f97316)',
     image: '/images/projects/generation-auto-passion.png',
