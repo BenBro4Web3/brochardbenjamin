@@ -33,7 +33,9 @@
       "WebFetch(domain:privatememe.com)",
       "Bash(gh repo view:*)",
       "WebFetch(domain:benbro4web3.github.io)",
-      "Bash(bun remove:*)"
+      "Bash(bun remove:*)",
+      "Bash(gh run:*)",
+      "WebFetch(domain:brochardbenjamin.com)"
     ]
   }
 }
