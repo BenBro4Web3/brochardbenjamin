@@ -17,7 +17,7 @@ export const stats = [
   { value: '200+', label: 'capteurs déployés' },
   { value: '12', label: 'langues (ResTranslate)' },
   { value: '3+', label: "ans pilotage IoT" },
-  { value: '4', label: 'projets publiés' },
+  { value: '5', label: 'projets publiés' },
 ];
 
 export interface Experience {
@@ -167,6 +167,18 @@ export const publicProjects: ProjectItem[] = [
     tags: ['Site vitrine', 'Lead gen', 'Automobile'],
     gradient: 'linear-gradient(135deg, #f59e0b, #f97316)',
     image: '/images/projects/generation-auto-passion.png',
+    isPublic: true,
+  },
+  {
+    id: 'rennes-pneus',
+    title: 'Rennes Pneus',
+    subtitle: 'Site vitrine — Garage & spécialiste pneus',
+    description:
+      'Site vitrine pour un garage automobile à Rennes spécialisé dans les pneus toutes marques. Présentation des services (montage, révision, freinage, géométrie, dépannage) et prise de contact.',
+    url: 'https://rennes-wheel-revival.lovable.app/',
+    tags: ['Site vitrine', 'Automobile', 'Services locaux'],
+    gradient: 'linear-gradient(135deg, #ef4444, #f97316)',
+    image: '/images/projects/rennes-pneus.png',
     isPublic: true,
   },
   {
