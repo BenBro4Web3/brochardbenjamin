@@ -17,7 +17,7 @@ export const stats = [
   { value: '200+', label: 'capteurs déployés' },
   { value: '12', label: 'langues (ResTranslate)' },
   { value: '3+', label: "ans pilotage IoT" },
-  { value: '5', label: 'projets publiés' },
+  { value: '6', label: 'projets publiés' },
 ];
 
 export interface Experience {
@@ -179,6 +179,17 @@ export const publicProjects: ProjectItem[] = [
     tags: ['Site vitrine', 'Automobile', 'Services locaux'],
     gradient: 'linear-gradient(135deg, #ef4444, #f97316)',
     image: '/images/projects/rennes-pneus.png',
+    isPublic: true,
+  },
+  {
+    id: 'bidsight',
+    title: 'BidSight',
+    subtitle: 'SaaS — Veille & réponse aux appels d\'offres par IA',
+    description:
+      'Plateforme de détection automatique des appels d\'offres publics avec scoring de pertinence et assistance IA à la rédaction des réponses. Suivi complet du cycle : signaux, opportunités, soumissions.',
+    tags: ['SaaS', 'IA', 'Marchés publics', 'Veille'],
+    gradient: 'linear-gradient(135deg, #1e3a5f, #3b82f6)',
+    image: '/images/projects/bidsight.png',
     isPublic: true,
   },
   {
