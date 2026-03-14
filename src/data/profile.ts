@@ -195,9 +195,9 @@ export const publicProjects: ProjectItem[] = [
   {
     id: 'privatememe',
     title: 'Privatememe',
-    subtitle: 'Application web — Accès restreint',
+    subtitle: 'Application web — Cartes postales & memes personnalisés',
     description:
-      'Application web communautaire en accès restreint. Démo sur demande.',
+      'Application permettant de créer et envoyer des cartes postales personnalisées avec vos photos, intégrant le FaceSwap pour transformer vos meilleurs memes et les partager avec vos proches.',
     url: 'https://privatememe.com/',
     tags: ['App web', 'React', 'Communauté'],
     gradient: 'linear-gradient(135deg, #a855f7, #ec4899)',
