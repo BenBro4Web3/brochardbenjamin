@@ -174,7 +174,7 @@ export const publicProjects: ProjectItem[] = [
     title: 'Rennes Pneus',
     subtitle: 'Site vitrine — Garage & spécialiste pneus',
     description:
-      'Site vitrine pour un garage automobile à Rennes spécialisé dans les pneus toutes marques. Présentation des services (montage, révision, freinage, géométrie, dépannage) et prise de contact.',
+      'Site vitrine avec agent IA multi-canaux intégré, capable de gérer la logique métier du garage (devis, RDV, références produits) et d\'alimenter le CRM en temps réel depuis le chat, WhatsApp ou téléphone.',
     url: 'https://rennes-wheel-revival.lovable.app/',
     tags: ['Site vitrine', 'Automobile', 'Services locaux'],
     gradient: 'linear-gradient(135deg, #ef4444, #f97316)',
